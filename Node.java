@@ -18,6 +18,8 @@ public class Node{
         return edgeList;
     }
 
+    public String getName(){return cityName;}
+
     @Override
     public int hashCode(){
         return cityName.hashCode();

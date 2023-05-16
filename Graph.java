@@ -27,15 +27,17 @@ public class Graph {
         while(distReader.nextLine().contains("#"));
         int[][] adjMatrix = new int[312][312];
         for (int r = 0; r < 312; r++){
-            for (int c = 0; c < 312; c++){
-                adjMatrix[r][c] = distReader.nextInt(9);
-                System.out.println(adjMatrix[r][c]);
+            for (int c = 0; c < 312 && distReader.hasNextInt(); c++){
+                adjMatrix[r][c] = distReader.nextInt();
             }
         }
+        String[] cityNames = new String[312];
         for (int r = 0; r < 312; r++){
             Node newCity = new Node(nameReader.nextLine());
+            cityNames[r] = newCity.getName();
             cities.add(newCity);
         }
+        for (int r = 0; r < )
 
         distReader.close();
         nameReader.close();
