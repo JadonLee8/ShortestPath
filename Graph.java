@@ -1,4 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Graph {
     private Set<Node> cities;
@@ -9,15 +13,22 @@ public class Graph {
     }
 
 
-    public void getData(){
-        Scanner distReader = new Scanner(new File("usca312_dist.txt"));
-        Scanner nameReader = new Scanner(new File("usca312_name.txt"));
+    public void getData() {
+        Scanner distReader = null;
+        Scanner nameReader = null;
+        try{
+            distReader = new Scanner(new File("usca312_dist.txt"));
+            nameReader = new Scanner(new File("usca312_name.txt"));
+        } catch(FileNotFoundException e) {
+            e.printStackTrace(); 
+            System.out.println("Couldn't find file.");
+        }
         while(nameReader.nextLine().contains("#"));
         while(distReader.nextLine().contains("#"));
         int[][] adjMatrix = new int[312][312];
         for (int r = 0; r < 312; r++){
             for (int c = 0; c < 312; c++){
-                adjMatrix[r][c] = distReader.nextInt("9");
+                adjMatrix[r][c] = distReader.nextInt(9);
                 System.out.println(adjMatrix[r][c]);
             }
         }
