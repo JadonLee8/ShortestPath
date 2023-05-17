@@ -37,7 +37,9 @@ public class Graph {
             cityNames[r] = newCity.getName();
             cities.add(newCity);
         }
-        for (int r = 0; r < )
+        for (int r = 0; r < 312; r++){
+            Node currentCity = cities.get(new Node(cityNames[r]));
+        }
 
         distReader.close();
         nameReader.close();
